@@ -29,3 +29,6 @@ Route::get('/report/{report}', 'ReportController@show');
 
 //defects
 Route::get('/defects', 'DefectController@index');
+
+//repairs
+Route::get('/repairs', 'RepairController@index');

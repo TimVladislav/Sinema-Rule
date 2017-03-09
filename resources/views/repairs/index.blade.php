@@ -20,15 +20,15 @@
             <th>Название</th>
             <th>Действия</th>
         </tr>
-        <? foreach ($defects as $defect) {
-          $user = App\User::find($defect->user_id);
+        <? foreach ($repairs as $repair) {
+          $user = App\User::find($repair->user_id);
         ?>
           <tr>
-              <td><a href="/defect/{{ $defect->id }}" style="position: absolute; width: 100%; left: 0px; height: 1.5em;"></a>{{ $defect->id }}</td>
+              <td><a href="/repair/{{ $repair->id }}" style="position: absolute; width: 100%; left: 0px; height: 1.5em;"></a>{{ $repair->id }}</td>
               <td>{{ $user->name }} <span class="label {{ $role[$user->role][1] }}">{{ $role[$user->role][0] }}</span></td>
-              <td>{{ $defect->updated_at }}</td>
-              <td>{{ $defect->title }}</td>
-              <td>{{ $defect->description }}</td>
+              <td>{{ $repair->updated_at }}</td>
+              <td>{{ $repair->title }}</td>
+              <td>{{ $repair->description }}</td>
           </tr>
         <? } ?>
     </table>

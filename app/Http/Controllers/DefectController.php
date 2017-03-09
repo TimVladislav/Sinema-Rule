@@ -20,7 +20,7 @@ class DefectController extends Controller
 
   public function show(Request $request, $id) {
     $defect = Defect::find($id);
-    return view('reports.show', [
+    return view('defects.show', [
       'defect' => $defect,
     ]);
   }

@@ -56,7 +56,7 @@
             <div class="form-group">
                 <label class="col-lg-2 col-sm-2 control-label">Ремонтов</label>
                 <div class="col-lg-10">
-                    <p class="form-control-static">--</p>
+                    <p class="form-control-static">{{count($user->repairs()->get())}}</p>
                 </div>
             </div>
             <div class="form-group">

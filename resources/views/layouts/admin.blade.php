@@ -325,7 +325,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="simple.html">
+                            <a href="/repairs">
                                 <i class="fa fa-glass"></i> <span>Ремонты</span>
                             </a>
                         </li>
