@@ -32,7 +32,11 @@ Route::post('/report', 'ReportController@create');
 //defects
 Route::get('/defects', 'DefectController@index');
 Route::get('/defect/{defect}', 'DefectController@show');
+Route::get('/defects/new', 'DefectController@new');
+Route::post('/defect', 'DefectController@create');
 
 //repairs
 Route::get('/repairs', 'RepairController@index');
 Route::get('/repair/{repair}', 'RepairController@show');
+Route::get('/repairs/new', 'RepairController@new');
+Route::post('/repair', 'RepairController@create');
