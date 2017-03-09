@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Report;
+use App\Repair;
+use App\Defect;
 
 class HomeController extends Controller
 {
@@ -25,8 +27,12 @@ class HomeController extends Controller
     public function index()
     {
         $reports = Report::orderBy('updated_at', 'desc')->limit(5)->get();
+        $defects = Defect::orderBy('updated_at', 'desc')->limit(5)->get();
+        $repairs = Repair::orderBy('updated_at', 'desc')->limit(5)->get();
         return view('home', [
           'reports' => $reports,
+          'defects' => $defects,
+          'repairs' => $repairs,
         ]);
     }
 }

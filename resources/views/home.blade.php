@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 <?
   $role = array(1 => array('Администратор', 'label-danger'), 2 => array('Киноинженер', 'label-success'), 3 => array('Киномеханик', 'label-info'));
+  $cUsers = count(App\User::all());
+  $cRepairs = count(App\Repair::all());
+  $cDefects = count(App\Defect::all());
+  $cReports = count(App\Report::all());
 ?>
 @section('content')
 <div class="row" style="margin-bottom:5px;">
@@ -10,7 +14,7 @@
         <div class="sm-st clearfix">
             <span class="sm-st-icon st-red"><i class="fa fa-check-square-o"></i></span>
             <div class="sm-st-info">
-                <span>3200</span>
+                <span>{{$cUsers}}</span>
                 пользователей
             </div>
         </div>
@@ -19,7 +23,7 @@
         <div class="sm-st clearfix">
             <span class="sm-st-icon st-violet"><i class="fa fa-envelope-o"></i></span>
             <div class="sm-st-info">
-                <span>2200</span>
+                <span>{{$cReports}}</span>
                 отчетов
             </div>
         </div>
@@ -28,7 +32,7 @@
         <div class="sm-st clearfix">
             <span class="sm-st-icon st-blue"><i class="fa fa-dollar"></i></span>
             <div class="sm-st-info">
-                <span>100,320</span>
+                <span>{{$cDefects}}</span>
                 поломок
             </div>
         </div>
@@ -37,7 +41,7 @@
         <div class="sm-st clearfix">
             <span class="sm-st-icon st-green"><i class="fa fa-paperclip"></i></span>
             <div class="sm-st-info">
-                <span>4567</span>
+                <span>{{$cRepairs}}</span>
                 ремонтов
             </div>
         </div>
@@ -112,6 +116,66 @@
       </section>
 
 
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+      <section class="panel">
+          <header class="panel-heading">
+              Последние поломки
+          </header>
+          <div class="table-responsive">
+              <table class="table table-hover">
+                  <tr>
+                      <th>#</th>
+                      <th>Работник</th>
+                      <th>Дата</th>
+                      <th>Название</th>
+                      <th>Действия</th>
+                  </tr>
+                  <? foreach ($defects as $defect) {
+                    $user = App\User::find($defect->user_id);
+                  ?>
+                    <tr>
+                        <td><a href="/defect/{{ $defect->id }}" style="position: absolute; width: 100%; left: 0px; height: 1.5em;"></a>{{ $defect->id }}</td>
+                        <td>{{ $user->name }} <span class="label {{ $role[$user->role][1] }}">{{ $role[$user->role][0] }}</span></td>
+                        <td>{{ $defect->updated_at }}</td>
+                        <td>{{ $defect->title }}</td>
+                        <td>{{ $defect->description }}</td>
+                    </tr>
+                  <? } ?>
+              </table>
+          </div><!-- /.box-body -->
+      </section>
+  </div>
+  <div class="col-md-6">
+      <section class="panel">
+          <header class="panel-heading">
+              Последние ремонты
+          </header>
+          <div class="table-responsive">
+              <table class="table table-hover">
+                  <tr>
+                      <th>#</th>
+                      <th>Работник</th>
+                      <th>Дата</th>
+                      <th>Название</th>
+                      <th>Действия</th>
+                  </tr>
+                  <? foreach ($repairs as $repair) {
+                    $user = App\User::find($repair->user_id);
+                  ?>
+                    <tr>
+                        <td><a href="/repair/{{ $repair->id }}" style="position: absolute; width: 100%; left: 0px; height: 1.5em;"></a>{{ $repair->id }}</td>
+                        <td>{{ $user->name }} <span class="label {{ $role[$user->role][1] }}">{{ $role[$user->role][0] }}</span></td>
+                        <td>{{ $repair->updated_at }}</td>
+                        <td>{{ $repair->title }}</td>
+                        <td>{{ $repair->description }}</td>
+                    </tr>
+                  <? } ?>
+              </table>
+          </div><!-- /.box-body -->
+      </section>
   </div>
 </div>
 
