@@ -3,6 +3,9 @@
   $role = array(1 => array('Администратор', 'label-danger'), 2 => array('Киноинженер', 'label-success'), 3 => array('Киномеханик', 'label-info'));
 ?>
 @section('content')
+<div class="col-md-12">
+  <a href="/reports/new" class="btn btn-success"><i class="fa fa-plus"></i>Создать</a>
+</div>
 <div class="panel-body table-responsive">
     <div class="box-tools m-b-15">
         <div class="input-group">
@@ -12,6 +15,7 @@
             </div>
         </div>
     </div>
+
     <table class="table table-hover">
         <tr>
             <th>#</th>

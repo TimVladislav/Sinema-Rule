@@ -26,6 +26,8 @@ Route::get('/user/{user}', 'UserController@show');
 //reports
 Route::get('/reports', 'ReportController@index');
 Route::get('/report/{report}', 'ReportController@show');
+Route::get('/reports/new', 'ReportController@new');
+Route::post('/report', 'ReportController@create');
 
 //defects
 Route::get('/defects', 'DefectController@index');

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Report;
+use Illuminate\Support\Facades\Validator;
+use Auth;
 
 class ReportController extends Controller
 {
@@ -24,5 +26,33 @@ class ReportController extends Controller
     return view('reports.show', [
       'report' => $report,
     ]);
+  }
+
+  public function new()
+  {
+    return view('reports.new');
+  }
+
+  public function create(Request $request)
+  {
+    $validator = Validator::make($request->all(), [
+      'title' => 'required|max:255|min:5',
+      'description' => 'required|max:255|min:5',
+    ]);
+
+    if ($validator->fails()) {
+      return redirect('/reports/new')
+        ->withInput()
+        ->withErrors($validator);
+    }
+    $report = 0;
+    if ($user = Auth::user()) {
+      $report = $user->reports()->create([
+        'title'       => $request->title,
+        'description' => $request->description,
+      ]);
+    }
+
+    return redirect('/report/'.$report->id);
   }
 }
