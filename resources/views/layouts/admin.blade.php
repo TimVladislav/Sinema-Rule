@@ -302,29 +302,29 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li>
+                        <li class="{{ Request::path() ==  'home' ? 'active' : ''  }}">
                             <a href="/home">
                                 <i class="fa fa-dashboard"></i> <span>Главная панель</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="{{ Request::path() ==  'users' ? 'active' : ''  }}">
                             <a href="/users">
                                 <i class="fa fa-gavel"></i> <span>Пользователи</span>
                             </a>
                         </li>
 
-                        <li>
+                        <li class="{{ Request::path() ==  'reports' ? 'active' : ''  }}">
                             <a href="/reports">
                                 <i class="fa fa-globe"></i> <span>Отчеты</span>
                             </a>
                         </li>
 
-                        <li>
+                        <li class="{{ Request::path() ==  'defects' ? 'active' : ''  }}">
                             <a href="/defects">
                                 <i class="fa fa-glass"></i> <span>Поломки</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="{{ Request::path() ==  'repairs' ? 'active' : ''  }}">
                             <a href="/repairs">
                                 <i class="fa fa-glass"></i> <span>Ремонты</span>
                             </a>
