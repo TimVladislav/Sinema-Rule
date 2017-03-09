@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+<?
+  $role = array(1 => array('Администратор', 'label-danger'), 2 => array('Киноинженер', 'label-success'), 3 => array('Киномеханик', 'label-info'));
+?>
 @section('content')
 <div class="row" style="margin-bottom:5px;">
 
@@ -63,31 +65,13 @@
           </header>
 
           <ul class="list-group teammates">
-              <li class="list-group-item">
-                  <a href=""><img src="assets/img/26115.jpg" width="50" height="50"></a>
-                  <span class="pull-right label label-danger inline m-t-15">Администратор</span>
-                  <a href="">Damon Parker</a>
-              </li>
-              <li class="list-group-item">
-                  <a href=""><img src="assets/img/26115.jpg"  width="50" height="50"></a>
-                  <span class="pull-right label label-info inline m-t-15">Киномеханик</span>
-                  <a href="">Joe Waston</a>
-              </li>
-              <li class="list-group-item">
-                  <a href=""><img src="assets/img/26115.jpg"  width="50" height="50"></a>
-                  <span class="pull-right label label-success inline m-t-15">Киноинженер</span>
-                  <a href="">Jannie Dvis</a>
-              </li>
-              <li class="list-group-item">
-                  <a href=""><img src="assets/img/26115.jpg"  width="50" height="50"></a>
-                  <span class="pull-right label label-info inline m-t-15">Киномеханик</span>
-                  <a href="">Emma Welson</a>
-              </li>
-              <li class="list-group-item">
-                  <a href=""><img src="assets/img/26115.jpg"  width="50" height="50"></a>
-                  <span class="pull-right label label-info inline m-t-15">Киномеханик</span>
-                  <a href="">Emma Welson</a>
-              </li>
+              <? foreach (App\User::all() as $user) { ?>
+                <li class="list-group-item">
+                    <a href=""><img src="assets/img/26115.jpg" width="50" height="50"></a>
+                    <span class="pull-right label {{$role[$user->role][1]}} inline m-t-15">{{$role[$user->role][0]}}</span>
+                    <a href="/user/{{$user->id}}">{{$user->name}}</a>
+                </li>
+              <? } ?>
           </ul>
           <div class="panel-footer bg-white">
               <!-- <span class="pull-right badge badge-info">32</span> -->
@@ -103,94 +87,28 @@
           <header class="panel-heading">
               Последние отчеты
           </header>
-          <div class="panel-body table-responsive">
+          <div class="table-responsive">
               <table class="table table-hover">
-                  <thead>
-                      <tr>
-                          <th>#</th>
-                          <th>Журнал</th>
-                          <th>Работник</th>
-                          <!-- <th>Client</th> -->
-                          <th>Дата</th>
-                          <!-- <th>Price</th> -->
-                          <th>Время</th>
-                          <th>Анонс</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>1</td>
-                          <td>Facebook</td>
-                          <td>Mark</td>
-                          <!-- <td>Steve</td> -->
-                          <td>10/10/2014</td>
-                          <!-- <td>$1500</td> -->
-                          <td><span class="label label-danger">in progress</span></td>
-                          <td><span class="badge badge-info">50%</span></td>
-                      </tr>
-                      <tr>
-                          <td>2</td>
-                          <td>Twitter</td>
-                          <td>Evan</td>
-                          <!-- <td>Darren</td> -->
-                          <td>10/8/2014</td>
-                          <!-- <td>$1500</td> -->
-                          <td><span class="label label-success">completed</span></td>
-                          <td><span class="badge badge-success">100%</span></td>
-                      </tr>
-                      <tr>
-                          <td>3</td>
-                          <td>Google</td>
-                          <td>Larry</td>
-                          <!-- <td>Nick</td> -->
-                          <td>10/12/2014</td>
-                          <!-- <td>$2000</td> -->
-                          <td><span class="label label-warning">in progress</span></td>
-                          <td><span class="badge badge-warning">75%</span></td>
-                      </tr>
-                      <tr>
-                          <td>4</td>
-                          <td>LinkedIn</td>
-                          <td>Allen</td>
-                          <!-- <td>Rock</td> -->
-                          <td>10/01/2015</td>
-                          <!-- <td>$2000</td> -->
-                          <td><span class="label label-info">in progress</span></td>
-                          <td><span class="badge badge-info">65%</span></td>
-                      </tr>
-                      <tr>
-                          <td>5</td>
-                          <td>Tumblr</td>
-                          <td>David</td>
-                          <!-- <td>HHH</td> -->
-                          <td>01/11/2014</td>
-                          <!-- <td>$2000</td> -->
-                          <td><span class="label label-warning">in progress</span></td>
-                          <td><span class="badge badge-danger">95%</span></td>
-                      </tr>
-                      <tr>
-                          <td>6</td>
-                          <td>Tesla</td>
-                          <td>Musk</td>
-                          <!-- <td>HHH</td> -->
-                          <td>01/11/2014</td>
-                          <!-- <td>$2000</td> -->
-                          <td><span class="label label-info">in progress</span></td>
-                          <td><span class="badge badge-success">95%</span></td>
-                      </tr>
-                      <tr>
-                          <td>7</td>
-                          <td>Ghost</td>
-                          <td>XXX</td>
-                          <!-- <td>HHH</td> -->
-                          <td>01/11/2014</td>
-                          <!-- <td>$2000</td> -->
-                          <td><span class="label label-info">in progress</span></td>
-                          <td><span class="badge badge-success">95%</span></td>
-                      </tr>
-                  </tbody>
+                  <tr>
+                      <th>#</th>
+                      <th>Работник</th>
+                      <th>Дата</th>
+                      <th>Название</th>
+                      <th>Действия</th>
+                  </tr>
+                  <? foreach ($reports as $report) {
+                    $user = App\User::find($report->user_id);
+                  ?>
+                    <tr>
+                        <td><a href="/report/{{ $report->id }}" style="position: absolute; width: 100%; left: 0px; height: 1.5em;"></a>{{ $report->id }}</td>
+                        <td>{{ $user->name }} <span class="label {{ $role[$user->role][1] }}">{{ $role[$user->role][0] }}</span></td>
+                        <td>{{ $report->updated_at }}</td>
+                        <td>{{ $report->title }}</td>
+                        <td>{{ $report->description }}</td>
+                    </tr>
+                  <? } ?>
               </table>
-          </div>
+          </div><!-- /.box-body -->
       </section>
 
 

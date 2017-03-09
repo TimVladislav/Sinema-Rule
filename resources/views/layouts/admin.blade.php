@@ -1,3 +1,6 @@
+<?
+  $role = array(1 => array('Администратор', 'label-danger'), 2 => array('Киноинженер', 'label-success'), 3 => array('Киномеханик', 'label-info'));
+?>
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
     <head>
@@ -7,28 +10,28 @@
         <meta name="description" content="Developed By Alexandra Avdeeva">
         <meta name="keywords" content="Sinema, Film, Admin">
         <!-- bootstrap 3.0.2 -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->
-        <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
-        <link href="assets/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <!-- Morris chart -->
-        <link href="assets/css/morris/morris.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/morris/morris.css" rel="stylesheet" type="text/css" />
         <!-- jvectormap -->
-        <link href="assets/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
         <!-- Date Picker -->
-        <link href="assets/css/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
         <!-- fullCalendar -->
         <!-- <link href="css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" /> -->
         <!-- Daterange picker -->
-        <link href="assets/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
         <!-- iCheck for checkboxes and radio inputs -->
-        <link href="assets/css/iCheck/all.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/iCheck/all.css" rel="stylesheet" type="text/css" />
         <!-- bootstrap wysihtml5 - text editor -->
         <!-- <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" /> -->
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <!-- Theme style -->
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -41,36 +44,36 @@
 
               <!-- jQuery 2.0.2 -->
               <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-              <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+              <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
 
               <!-- jQuery UI 1.10.3 -->
-              <script src="assets/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+              <script src="/assets/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
               <!-- Bootstrap -->
-              <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+              <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
               <!-- daterangepicker -->
-              <script src="assets/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+              <script src="/assets/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
 
-              <script src="assets/js/plugins/chart.js" type="text/javascript"></script>
+              <script src="/assets/js/plugins/chart.js" type="text/javascript"></script>
 
               <!-- datepicker
                   <script src="js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>-->
               <!-- Bootstrap WYSIHTML5
                   <script src="js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>-->
               <!-- iCheck -->
-              <script src="assets/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+              <script src="/assets/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
               <!-- calendar -->
-              <script src="assets/js/plugins/fullcalendar/fullcalendar.js" type="text/javascript"></script>
+              <script src="/assets/js/plugins/fullcalendar/fullcalendar.js" type="text/javascript"></script>
 
               <!-- Director App -->
-              <script src="assets/js/Director/app.js" type="text/javascript"></script>
+              <script src="/assets/js/Director/app.js" type="text/javascript"></script>
 
               <!-- Director dashboard demo (This is only for demo purposes) -->
-              <script src="assets/js/Director/dashboard.js" type="text/javascript"></script>
+              <script src="/assets/js/Director/dashboard.js" type="text/javascript"></script>
     </head>
     <body class="skin-black">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 Кинотеатр
             </a>
@@ -99,7 +102,7 @@
                                         <li><!-- start message -->
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="assets/img/avatar3.png" class="img-circle" alt="User Image"/>
+                                                    <img src="/assets/img/avatar3.png" class="img-circle" alt="User Image"/>
                                                 </div>
                                                 <h4>
                                                     Support Team
@@ -111,7 +114,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="assets/img/avatar2.png" class="img-circle" alt="user image"/>
+                                                    <img src="/assets/img/avatar2.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Director Design Team
@@ -123,7 +126,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="assets/img/avatar.png" class="img-circle" alt="user image"/>
+                                                    <img src="/assets/img/avatar.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Developers
@@ -135,7 +138,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="assets/img/avatar2.png" class="img-circle" alt="user image"/>
+                                                    <img src="/assets/img/avatar2.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Sales Department
@@ -147,7 +150,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="assets/img/avatar.png" class="img-circle" alt="user image"/>
+                                                    <img src="/assets/img/avatar.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Reviewers
@@ -275,12 +278,12 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="assets/img/avatar3.png" class="img-circle" alt="User Image" />
+                            <img src="/assets/img/avatar3.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
                             <p>{{ Auth::user()->name }}</p>
 
-                            <a href="#">Администратор</a>
+                            <a href="#">{{ $role[Auth::user()->role][0] }}</a>
                         </div>
                     </div>
                     <!-- search form -->
@@ -301,13 +304,13 @@
                             </a>
                         </li>
                         <li>
-                            <a href="general.html">
+                            <a href="/users">
                                 <i class="fa fa-gavel"></i> <span>Пользователи</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="basic_form.html">
+                            <a href="/reports">
                                 <i class="fa fa-globe"></i> <span>Отчеты</span>
                             </a>
                         </li>

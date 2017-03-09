@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Report;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $reports = Report::orderBy('updated_at', 'desc')->limit(5)->get();
+        return view('home', [
+          'reports' => $reports,
+        ]);
     }
 }

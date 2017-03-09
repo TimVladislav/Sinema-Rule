@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+//users
+Route::get('/users', 'UserController@index');
+
+//reports
+Route::get('/reports', 'ReportController@index');
+Route::get('/report/{report}', 'ReportController@show');
