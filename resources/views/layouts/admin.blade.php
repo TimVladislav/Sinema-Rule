@@ -320,7 +320,7 @@
                         </li>
 
                         <li>
-                            <a href="simple.html">
+                            <a href="/defects">
                                 <i class="fa fa-glass"></i> <span>Поломки</span>
                             </a>
                         </li>

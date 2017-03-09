@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
       return $this->hasMany(Report::class);
     }
+
+    public function defects()
+    {
+      return $this->hasMany(Defect::class);
+    }
 }
